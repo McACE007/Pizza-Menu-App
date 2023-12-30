@@ -83,7 +83,8 @@ function Menu() {
           />
         )}
       </ul>
-      ) : null}
+      ) : 
+        <p>We're still working on our menu. Please come back later :)</p>}
     </main>
   );
 }
@@ -116,7 +117,8 @@ function Footer() {
           </p>
           <button className="btn">Order</button>
         </div>
-      ) : <p>We're still working on our menu. Please come back later :)</p>}
+      ) : 
+        <p>We're happy to welcome you between {openHour}:00 and {closeHour}:00.</p>}
     </footer>
   );
 }
