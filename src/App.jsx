@@ -58,6 +58,7 @@ function App() {
   )
 }
 
+
 function Header() {
   return (
     <header className="header">
@@ -70,10 +71,31 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza/>
-      <Pizza/>
-      <Pizza/>
+      <ul className='pizzas'>
+        {pizzaData.map(pizza => 
+          <Pizza 
+            name={pizza.name} 
+            ingredients={pizza.ingredients} 
+            photoName={pizza.photoName}
+            price={pizza.price}
+            key = {pizza.name}
+          />
+        )}
+      </ul>
     </main>
+  );
+}
+
+function Pizza(props){
+  return (
+    <li className="pizza">
+      <img src={props.photoName} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+      </div>
+    </li> 
   );
 }
 
@@ -88,11 +110,5 @@ function Footer() {
   );
 }
 
-function Pizza(){
-  return <div>
-    <h3>Pizza</h3>
-    <img src='pizzas/spinaci.jpg' /> 
-  </div> 
-}
 
 export default App
