@@ -98,12 +98,12 @@ function Menu() {
 
 function Pizza(props){
   return (
-    <li className="pizza">
+    <li className={`pizza ${props.pizzaObject.soldOut ? "sold-out" : ""}`}>
       <img src={props.pizzaObject.photoName} />
       <div>
         <h3>{props.pizzaObject.name}</h3>
         <p>{props.pizzaObject.ingredients}</p>
-        <span>{props.pizzaObject.price}</span>
+        <span>{props.pizzaObject.soldOut ? "SOLD OUT" : props.pizzaObject.price}</span>
       </div>
     </li> 
   );
